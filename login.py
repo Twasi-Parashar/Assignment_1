@@ -1,21 +1,22 @@
-# Simple Login System
-
-# Stored credentials (for demo purposes)
-USERNAME = "admin"
-PASSWORD = "admin123"
+# User database (username : password)
+users = {
+    "admin": "admin123",
+    "student1": "stud123",
+    "student2": "stud456"
+}
 
 def login():
-    print("=== Student Registration Login ===")
+    print("=== Login System ===")
     
     username = input("Enter username: ")
     password = input("Enter password: ")
 
-    if username == USERNAME and password == PASSWORD:
-        print("Login successful! Welcome to the system.")
+    if username in users and users[username] == password:
+        print(f"Login successful! Welcome, {username}.")
         return True
     else:
-        print("Invalid username or password.")
+        print("Login failed. Invalid credentials.")
         return False
 
-# Run login
+# Run the login function
 login()
